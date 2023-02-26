@@ -1,9 +1,23 @@
-def compare_numbers(a, b)
-    comparison = (a <=> b)
-    "#{a} is #{['equal to', 'greater than', 'smaller than'][comparison + 1]} #{b}"
-  end
-  
-  puts compare_numbers(10, 3)    # "10 is greater than 3"
-  puts compare_numbers(-8, -9)  # "-8 is greater than -9"
-  puts compare_numbers(77, 77)    # "77 is equal to 77"
-  
+#function that takes two numeric arguments. Assumed: a and b => (a, b)
+
+def comparison(a,b)
+
+  #based on the spaceship operator, compare two numbers, a and b, using the case statement.
+
+  #spaceship operator (<=>) compares two objects and returns;
+
+       # 1 if the first object's value is larger,
+       # 0 if both values are equal
+       # -1 if the second object's value is larger
+
+
+       compare = case a <=> b
+           when 1 then "greater than"
+           when 0 then "equal to"
+           when -1 then "smaller than"
+       end
+
+      #returning string
+      "#{a} is #{compare} #{b}"
+
+end
